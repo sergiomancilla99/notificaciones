@@ -17,7 +17,7 @@
 
         btn.addEventListener('click', (ev) => {
             console.log("Hola");
-            if (!("Notification" in window)) {
+           /* if (!("Notification" in window)) {
             // Check if the browser supports notifications
             alert("This browser does not support desktop notification");
           } else if (Notification.permission === "granted") {
@@ -36,7 +36,20 @@
                 const notification = new Notification("Hi there!");
                 // …
               }
+            });*/
+             Notification.requestPermission((result) => {
+              if (result === 'granted') {
+                navigator.serviceWorker.ready.then((registration) => {
+                  registration.showNotification('Vibration Sample', {
+                    body: 'Buzz! Buzz! ACA',
+                    icon: 'manifest/images/icons/icon-128x128.png',
+                    vibrate: [200, 100, 200, 100, 200, 100, 200],
+                    tag: 'vibration-sample'
+                  });
+                });
+              }
             });
+        });
           }
         });
     </script>
