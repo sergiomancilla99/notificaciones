@@ -22,13 +22,7 @@ workbox.routing.registerRoute(
 )
 
 setInterval(() => {
-  const notificationTitle = "test";
-        const notificationOptions = {
-            body: "tesfggg",
-            icon: "/manifest/images/icon-72x72.png"
-        }
-        
-          self.registration.showNotification(notificationTitle, notificationOptions)
+ 
     
 
    
