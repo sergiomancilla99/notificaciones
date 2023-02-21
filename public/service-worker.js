@@ -23,13 +23,7 @@ workbox.routing.registerRoute(
 
 setInterval(() => {
   
-    const notificationTitle = "testt";
-        const notificationOptions = {
-            body: "Hola probando 123",
-            icon: ""
-        }
-        
-          self.registration.showNotification(notificationTitle, notificationOptions)
+    
 
    
 
