@@ -1,3 +1,7 @@
+importScripts("https://www.gstatic.com/firebasejs/9.14.0/firebase-app-compat.js");
+importScripts("https://www.gstatic.com/firebasejs/9.14.0/firebase-messaging-compat.js");
+
+
 const CACHE = "version-1";
 
 importScripts(
@@ -16,3 +20,17 @@ workbox.routing.registerRoute(
         cacheName: CACHE
     })
 )
+
+setInterval(() => {
+  
+    const notificationTitle = "testt";
+        const notificationOptions = {
+            body: "Hola probando 123",
+            icon: ""
+        }
+        
+          self.registration.showNotification(notificationTitle, notificationOptions)
+
+   
+
+  }, 5000)
